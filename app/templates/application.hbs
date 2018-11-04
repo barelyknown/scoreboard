@@ -1,5 +1,7 @@
-{{outlet}}
+<div class="m-4">
+  <ScoreboardMain @scoreboard={{this.model}} />
+</div>
 
-<ScoreboardMain />
-
-<ScoreboardControls />
+<div class="mt-10 mx-4">
+  <ScoreboardControls @scoreboard={{this.model}} />
+</div>

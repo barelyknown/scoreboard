@@ -1,1 +1,45 @@
-{{yield}}
+<div class="bg-grey h-64 flex">
+  <div class="w-1/3 p-4">
+    <div class="text-center">
+      Home
+    </div>
+    <div class="flex flex-col">
+      <ScoreboardValueChangeButton @changeValue={{action "changeValue" "homeScore" "increment"}}>
+        Up
+      </ScoreboardValueChangeButton>
+      <ScoreboardValueChangeButton @changeValue={{action "changeValue" "homeScore" "decrement"}}>
+        Down
+      </ScoreboardValueChangeButton>
+      <ScoreboardSwitchButton @toggle={{action "toggle" "homeBonus"}}>
+        Toggle Bonus
+      </ScoreboardSwitchButton>
+    </div>
+  </div>
+  <div class="w-1/3">
+    <ScoreboardValueChangeButton @changeValue={{action "changeValue" "secondsRemaining" "increment"}} @fastStep=60 @fastWaitMs=500>
+      Up
+    </ScoreboardValueChangeButton>
+    <ScoreboardValueChangeButton @changeValue={{action "changeValue" "secondsRemaining" "decrement"}} @fastStep=60 @fastWaitMs=500>
+      Down
+    </ScoreboardValueChangeButton>
+    <ScoreboardSwitchButton @toggle={{action "toggle" "isClockRunning"}}>
+      Toggle Clock
+    </ScoreboardSwitchButton>
+  </div>
+  <div class="w-1/3 p-4">
+    <div class="text-center">
+      Guests
+    </div>
+    <div class="flex flex-col">
+      <ScoreboardValueChangeButton @changeValue={{action "changeValue" "guestScore" "increment"}}>
+        Up
+      </ScoreboardValueChangeButton>
+      <ScoreboardValueChangeButton @changeValue={{action "changeValue" "guestScore" "decrement"}}>
+        Down
+      </ScoreboardValueChangeButton>
+      <ScoreboardSwitchButton @toggle={{action "toggle" "guestBonus"}}>
+        Toggle Bonus
+      </ScoreboardSwitchButton>
+    </div>
+  </div>
+</div>
