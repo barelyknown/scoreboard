@@ -1,0 +1,23 @@
+<div class="p-1 bg-scoreboard-black">
+  <div class="flex">
+    <div class="flex-grow"></div>
+    <LightbulbNumber
+      @digit={{floor (div this.score 100)}}
+      @showZero={{false}}
+      @onlyOne={{true}}
+    />
+    <div class="w-2"></div>
+
+    <LightbulbNumber
+      @digit={{floor (div (mod this.score 100) 10)}}
+      @showZero={{gte this.score 100}}
+    />
+
+    <div class="w-2"></div>
+
+    <LightbulbNumber
+      @digit={{mod this.score 10}}
+      @showZero={{true}}
+    />
+  </div>
+</div>

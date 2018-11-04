@@ -1,38 +1,20 @@
-<div class="bg-blue h-64 flex">
-  <div class="w-1/3 p-4">
-    <div class="text-center">
-      Home
+<div class="flex bg-brown border-8 border-brown-light shadow-lg">
+  <TeamScore @team="home" @scoreboard={{this.scoreboard}}/>
+
+  <div class="flex-grow p-2">
+    <ScoreboardMainClock @secondsRemaining={{this.scoreboard.secondsRemaining}} />
+
+    <div class="flex justify-around px-4 bg-scoreboard-black w-1/2 mx-auto mt-4 text-3xl font-bold">
+      <PeriodNumber @number=1 @scoreboard={{this.scoreboard}} />
+      <PeriodNumber @number=2 @scoreboard={{this.scoreboard}} />
+      <PeriodNumber @number=3 @scoreboard={{this.scoreboard}} />
+      <PeriodNumber @number=4 @scoreboard={{this.scoreboard}} />
     </div>
-    <div class="flex items-center h-32">
-      <div class="flex-grow text-center text-4xl">
-        {{this.scoreboard.homeScore}}
-      </div>
-    </div>
-    <div class="text-center {{if this.scoreboard.homeBonus "text-white font-bold" "text-blue-light"}}">
-      BONUS
-    </div>
-  </div>
-  <div class="w-1/3 p-4">
-    <div class="text-center">
-      <ScoreboardMainClock @secondsRemaining={{this.scoreboard.secondsRemaining}} />
-    </div>
-    <div class="flex items-center h-32">
-      <div class="flex-grow text-center text-2xl">
-        {{this.scoreboard.period}}
-      </div>
+
+    <div class="w-1/2 mx-auto text-4xl font-bold text-center mt-2 text-brown-grey border border-brown-dark leading-normal">
+      period
     </div>
   </div>
-  <div class="w-1/3 p-4">
-    <div class="text-center">
-      Guests
-    </div>
-    <div class="flex items-center h-32">
-      <div class="flex-grow text-center text-4xl">
-        {{this.scoreboard.guestScore}}
-      </div>
-    </div>
-    <div class="text-center {{if this.scoreboard.guestBonus "text-white font-bold" "text-blue-light"}}">
-      BONUS
-    </div>
-  </div>
+
+  <TeamScore @team="guests" @scoreboard={{this.scoreboard}}/>
 </div>

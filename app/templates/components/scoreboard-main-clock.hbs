@@ -1,1 +1,37 @@
-{{left-pad this.minutes 2 '0'}}:{{left-pad this.seconds 2 '0'}}
+<div class="flex">
+  <div class="flex-grow"></div>
+  <div class="flex bg-scoreboard-black p-1">
+    <LightbulbNumber
+      @color="red"
+      @digit={{floor (div (mod this.minutes 100) 10)}}
+      @showZero={{false}}
+    />
+    <div class="w-2"></div>
+    <LightbulbNumber
+      @color="red"
+      @digit={{mod this.minutes 10}}
+      @showZero={{true}}
+    />
+    <div class="w-2"></div>
+
+    <div class="h-3/4 m-auto flex flex-col justify-around mx-1/2">
+      <LightbulbNumberCell @isOn={{true}} @color="orange" />
+      <LightbulbNumberCell @isOn={{true}} @color="orange" />
+    </div>
+
+    <div class="w-2"></div>
+
+    <LightbulbNumber
+      @color="red"
+      @digit={{floor (div (mod this.seconds 100) 10)}}
+      @showZero={{true}}
+    />
+    <div class="w-2"></div>
+    <LightbulbNumber
+      @color="red"
+      @digit={{mod this.seconds 10}}
+      @showZero={{true}}
+    />
+  </div>
+  <div class="flex-grow"></div>
+</div>

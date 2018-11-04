@@ -1,0 +1,21 @@
+<div class="text-center font-light">
+  {{titleize this.team}}
+</div>
+<div class="my-4"></div>
+
+<div class="flex justify-around">
+  <ScoreboardValueChangeButton @changeValue={{action "changeValue" this.scoreAttribute "decrement"}}>
+    -
+  </ScoreboardValueChangeButton>
+  <ScoreboardValueChangeButton @changeValue={{action "changeValue" this.scoreAttribute "increment"}}>
+    +
+  </ScoreboardValueChangeButton>
+</div>
+
+<div class="my-8"></div>
+
+<div class="flex justify-center">
+  <ScoreboardSwitchButton @toggle={{action "toggle" this.bonusAttribute}}>
+    bonus
+  </ScoreboardSwitchButton>
+</div>

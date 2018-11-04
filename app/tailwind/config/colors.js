@@ -97,5 +97,17 @@ export default {
   pink: '#f66d9b',
   'pink-light': '#fa7ea8',
   'pink-lighter': '#ffbbca',
-  'pink-lightest': '#ffebef'
+  'pink-lightest': '#ffebef',
+
+  'brown-dark': '#53473C',
+  brown: '#6B6050',
+  'brown-light': '#A0999C',
+  'brown-grey': '#C5C0B5',
+
+  'scoreboard-yellow-backlit': '#F3C894',
+  'scoreboard-yellow-not-backlit': '#625154',
+
+  'scoreboard-black': '#392F31',
+
+  'tan': '#eee8d4'
 };

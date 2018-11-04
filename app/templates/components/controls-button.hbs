@@ -1,0 +1,13 @@
+<div class="
+w-24 text-center rounded py-1 px-2
+bg-white font-thin text-grey-darker border-grey-light
+shadow-md
+active:shadow-inner active:bg-grey-lightest
+cursor-pointer select-none
+"
+  onmousedown={{action "onPush"}}
+  onmouseup={{action "onRelease"}}
+  onmouseleave={{action "onRelease"}}
+>
+  {{yield}}
+</div>

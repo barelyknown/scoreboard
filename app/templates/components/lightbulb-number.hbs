@@ -1,0 +1,8 @@
+<div class="flex">
+  {{#unless this.onlyOne}}
+    <LightbulbNumberColumn @colIndex=0 @digit={{this.digit}} @number={{this}} />
+    <LightbulbNumberColumn @colIndex=1 @digit={{this.digit}} @number={{this}} />
+    <LightbulbNumberColumn @colIndex=2 @digit={{this.digit}} @number={{this}} />
+  {{/unless}}
+  <LightbulbNumberColumn @colIndex=3 @digit={{this.digit}} @number={{this}} />
+</div>

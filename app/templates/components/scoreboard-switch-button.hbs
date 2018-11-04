@@ -1,3 +1,5 @@
-<div class="text-center cursor-pointer" onclick={{perform this.onPushTask this.toggle}}>
+<ControlsButton
+  @onPush={{perform this.onPushTask this.toggle}}
+>
   {{yield}}
-</div>
+</ControlsButton>

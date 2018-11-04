@@ -11,7 +11,7 @@ const VALUE_LIMITS = {
     min: 0,
     max: 199,
   },
-  guestScore: {
+  guestsScore: {
     min: 0,
     max: 199,
   },
@@ -29,7 +29,7 @@ export default DS.Model.extend({
   init() {
     this._super(...arguments);
     this.resetChangeValueSound();
-    this.set('airhornSound', new Audio('/sounds/airhorn.mp3'));
+    this.set('hornSound', new Audio('/sounds/airhorn.mp3'));
   },
 
   resetChangeValueSound() {
@@ -40,9 +40,9 @@ export default DS.Model.extend({
 
   homeBonus: attr('boolean', { defaultValue: false }),
 
-  guestScore: attr('number', { defaultValue: 0 }),
+  guestsScore: attr('number', { defaultValue: 0 }),
 
-  guestBonus: attr('boolean', { defaultValue: false }),
+  guestsBonus: attr('boolean', { defaultValue: false }),
 
   secondsRemaining: attr('number', { defaultValue: 0 }),
 
@@ -53,6 +53,8 @@ export default DS.Model.extend({
       return isPresent(this.clockStartedAt);
     },
     set(_, value) {
+      if (this.secondsRemaining === 0) return false;
+
       if (value) {
         this.set('clockStartedAt', new Date());
       } else {
@@ -84,7 +86,7 @@ export default DS.Model.extend({
       this.set('secondsRemaining', Math.max(0, start - diff));
       if (this.secondsRemaining === 0) {
         this.set('isClockRunning', false);
-        this.airhornSound.play();
+        this.hornSound.play();
       }
       yield timeout(50);
     }

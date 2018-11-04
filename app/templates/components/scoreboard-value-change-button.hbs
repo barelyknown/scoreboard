@@ -1,7 +1,6 @@
-<div class="text-3xl cursor-pointer text-center"
-  onmousedown={{perform this.onPushTask this}}
-  onmouseup={{perform this.onReleaseTask}}
-  onmouseleave={{perform this.onReleaseTask}}
+<ControlsButton
+  @onPush={{perform this.onPushTask this}}
+  @onRelease={{perform this.onReleaseTask}}
 >
   {{yield}}
-</div>
+</ControlsButton>
