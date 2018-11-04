@@ -18,6 +18,10 @@ const VALUE_LIMITS = {
   secondsRemaining: {
     min: 0,
     max: 100 * 60 - 1,
+  },
+  period: {
+    min: 1,
+    max: 4,
   }
 };
 
@@ -41,6 +45,8 @@ export default DS.Model.extend({
   guestBonus: attr('boolean', { defaultValue: false }),
 
   secondsRemaining: attr('number', { defaultValue: 0 }),
+
+  period: attr('number', { defaultValue: 1 }),
 
   isClockRunning: computed('clockStartedAt', {
     get() {

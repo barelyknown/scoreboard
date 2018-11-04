@@ -25,6 +25,9 @@
     <ScoreboardSwitchButton @toggle={{action "toggle" "isClockRunning"}}>
       Toggle Clock
     </ScoreboardSwitchButton>
+    <ScoreboardValueChangeButton @changeValue={{action "changeValue" "period" "increment"}}>
+      Period
+    </ScoreboardValueChangeButton>
   </div>
   <div class="w-1/3 p-4">
     <div class="text-center">
