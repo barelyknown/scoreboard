@@ -23,25 +23,25 @@ These were some of the more interesting programming challenges.
 
 ### Not Done
 
-1. How can we update the scoreboard remotely?
-2. How can we make it fully responsive?
+1.  How can we update the scoreboard remotely?
+2.  How can we make it fully responsive?
 
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+*   [Git](https://git-scm.com/)
+*   [Node.js](https://nodejs.org/) (with npm)
+*   [Ember CLI](https://ember-cli.com/)
+*   [Google Chrome](https://google.com/chrome/)
 
 ## Installation
 
-* `git clone https://github.com/barelyknown/scoreboard.git`
-* `cd scoreboard`
-* `yarn`
+*   `git clone https://github.com/barelyknown/scoreboard.git`
+*   `cd scoreboard`
+*   `yarn`
 
 ## Running / Development
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+*   `ember serve`
+*   Visit your app at [http://localhost:4200](http://localhost:4200).
