@@ -48,6 +48,10 @@ export default DS.Model.extend({
 
   period: attr('number', { defaultValue: 1 }),
 
+  stopGame() {
+    this.updateSecondsRemainingTask.cancelAll();
+  },
+
   isClockRunning: computed('clockStartedAt', {
     get() {
       return isPresent(this.clockStartedAt);

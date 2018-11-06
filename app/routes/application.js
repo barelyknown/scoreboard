@@ -7,6 +7,7 @@ export default Route.extend({
 
   actions: {
     reset() {
+      this.controller.model.stopGame();
       this.refresh();
     }
   }
