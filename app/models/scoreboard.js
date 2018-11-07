@@ -2,9 +2,6 @@ import DS from 'ember-data';
 import attr from 'ember-data/attr';
 import { get, computed } from '@ember/object';
 import { isPresent } from '@ember/utils';
-import { notEmpty } from 'ember-awesome-macros';
-import { task, timeout } from 'ember-concurrency';
-import { run } from '@ember/runloop';
 
 const VALUE_LIMITS = {
   homeScore: {

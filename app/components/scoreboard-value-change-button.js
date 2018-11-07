@@ -1,6 +1,5 @@
 import Component from '@ember/component';
 import { task, timeout } from 'ember-concurrency';
-import { computed } from '@ember/object';
 import { readOnly } from '@ember/object/computed';
 import { gte, not, conditional } from 'ember-awesome-macros';
 
