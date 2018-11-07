@@ -1,7 +1,11 @@
 <div class="bg-tan h-screen p-8">
   <ScoreboardMain @scoreboard={{this.model}} />
 
-  <div class="mt-10 mx-4">
+  <div class="my-4">
+    {{this.model.example}}
+  </div>
+
+  <div class="mt-10">
     <ScoreboardControls
       @scoreboard={{this.model}}
       @reset={{action send "reset"}}
