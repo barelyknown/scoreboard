@@ -1,8 +1,10 @@
 import Component from '@ember/component';
-import { computed } from '@ember/object';
+import { getBy, raw } from 'ember-awesome-macros';
 
 export default Component.extend({
   tagName: '',
+
+  isClockRunning: getBy('scoreboard', raw('isClockRunning')),
 
   actions: {
     changeValue(attribute, direction, step) {

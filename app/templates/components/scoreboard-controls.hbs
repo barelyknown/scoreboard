@@ -33,6 +33,9 @@
     <div class="flex justify-around">
       <ScoreboardSwitchButton @toggle={{action "toggle" "isClockRunning"}}>
         clock
+        {{#if this.isClockRunning}}
+          <UpdateScoreboardClock @scoreboard={{@scoreboard}} />
+        {{/if}}
       </ScoreboardSwitchButton>
       <ScoreboardSwitchButton @toggle={{action "soundHorn"}}>
         horn
@@ -52,6 +55,5 @@
         </span>
       </ControlsButton>
     </div>
-
   </div>
 </div>
