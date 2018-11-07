@@ -2,21 +2,21 @@
   <div class="flex">
     <div class="flex-grow"></div>
     <LightbulbNumber
-      @digit={{floor (div this.score 100)}}
+      @digit={{to-digit-place this.score 100}}
       @showZero={{false}}
       @onlyOne={{true}}
     />
     <div class="w-2"></div>
 
     <LightbulbNumber
-      @digit={{floor (div (mod this.score 100) 10)}}
+      @digit={{to-digit-place this.score 10}}
       @showZero={{gte this.score 100}}
     />
 
     <div class="w-2"></div>
 
     <LightbulbNumber
-      @digit={{mod this.score 10}}
+      @digit={{to-digit-place this.score 1}}
       @showZero={{true}}
     />
   </div>

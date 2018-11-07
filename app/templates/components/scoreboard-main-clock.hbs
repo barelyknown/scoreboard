@@ -3,13 +3,13 @@
   <div class="flex bg-scoreboard-black p-1">
     <LightbulbNumber
       @color="red"
-      @digit={{floor (div (mod this.minutes 100) 10)}}
+      @digit={{to-digit-place this.minutes 10}}
       @showZero={{false}}
     />
     <div class="w-2"></div>
     <LightbulbNumber
       @color="red"
-      @digit={{mod this.minutes 10}}
+      @digit={{to-digit-place this.minutes 1}}
       @showZero={{true}}
     />
     <div class="w-2"></div>
@@ -23,13 +23,13 @@
 
     <LightbulbNumber
       @color="red"
-      @digit={{floor (div (mod this.seconds 100) 10)}}
+      @digit={{to-digit-place this.seconds 10}}
       @showZero={{true}}
     />
     <div class="w-2"></div>
     <LightbulbNumber
       @color="red"
-      @digit={{mod this.seconds 10}}
+      @digit={{to-digit-place this.seconds 1}}
       @showZero={{true}}
     />
   </div>
