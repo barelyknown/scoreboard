@@ -46,11 +46,9 @@ export default DS.Model.extend({
 
   secondsRemaining: attr('number', { defaultValue: 0 }),
 
-  period: attr('number', { defaultValue: 1 }),
+  clockStartedAt: attr('date'),
 
-  stopGame() {
-    this.updateSecondsRemainingTask.cancelAll();
-  },
+  period: attr('number', { defaultValue: 1 }),
 
   isClockRunning: computed('clockStartedAt', {
     get() {
@@ -67,34 +65,6 @@ export default DS.Model.extend({
       return value;
     },
   }),
-
-  clockStartedAt: computed('_clockStartedAt', {
-    get() {
-      return this._clockStartedAt;
-    },
-    set(_, value) {
-      this.set('_clockStartedAt', value);
-      if (isPresent(value)) {
-        run.next(() => {
-          this.updateSecondsRemainingTask.perform();
-        })
-      }
-      return value;
-    },
-  }),
-
-  updateSecondsRemainingTask: task(function * () {
-    let start = this.secondsRemaining;
-    while (this.secondsRemaining > 0 && this.isClockRunning) {
-      const diff = (new Date() - this.clockStartedAt) / 1000;
-      this.set('secondsRemaining', Math.max(0, start - diff));
-      if (this.secondsRemaining === 0) {
-        this.set('isClockRunning', false);
-        this.hornSound.play();
-      }
-      yield timeout(50);
-    }
-  }).drop(),
 
   changeValue(attribute, newValue) {
     this.set(attribute, newValue);
